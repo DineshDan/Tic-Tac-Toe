@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class TicTacToe {
 	String player;
 	String computer;
@@ -8,6 +9,7 @@ public class TicTacToe {
 	   TicTacToe Board=new TicTacToe();
           Board.assignBoard();
          showBoard(board);
+         int userMove = getuserMove(board,userInput);
  }
 
    public static char[] createBoard() {
@@ -33,6 +35,19 @@ public class TicTacToe {
 
              }
        }
+    public static int userMove(char[] board,Scanner userInput) {
+	Integer [] validcells={1,2,3,4,5,6,7,8,9};
+	while(true){
+       
+	Systen.out.println("enter the next move(1-9):");
+	int index = userInput.nextInt();
+	if(Arrays.asList(validcells).contains(index) && isspacefree(board,index))
+	return index;
+            }
+
+    }
+ private static boolean isspacefree(char[] board, int index) {
+   return board[index] == ' ' ;
+ }
+
 }
-
-
