@@ -5,8 +5,9 @@ public class TicTacToe {
      public static void main(String[] args){
           System.out.println("Welcome to TicTacToe program");
           char[] board = createBoard();
-	   TicTacToe choiceBoard=new TicTacToe();
-          choiceBoard.assignBoard();
+	   TicTacToe Board=new TicTacToe();
+          Board.assignBoard();
+         showBoard();
  }
 
    public static char[] createBoard() {
@@ -25,7 +26,12 @@ public class TicTacToe {
               else
                    computer="0";
               return player;
-         }
+   public static void showBoard() {
+                       for(int i=0;i<3;i++) {
+    System.out.println(board[i]+"|"+board[i+1]+"|"+board[i+2]+"|");
+
+             }
        }
+}
 
 
